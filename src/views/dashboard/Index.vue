@@ -44,7 +44,7 @@ export default {
         let dhts = ref([])
 
         onMounted(() => {
-            axios.get('http://127.0.0.1:8000/api/v1/umeng/dht')
+            axios.get('https://leddht-api-iot.herokuapp.com/api/v1/umeng/dht')
             .then((result) => {
                 dhts.value = result.data
             }).catch((err) => {
@@ -54,7 +54,7 @@ export default {
 
         function updateON(ON){
             axios.put(
-                `http://127.00.0.1:8000/api/v1/umeng/led/1`, {'status': "ON"}
+                `https://leddht-api-iot.herokuapp.com/api/v1/umeng/led/1`, {'status': "ON"}
             ).then(() => {
                 console.log("berhasil")
             }).catch((err) => {
@@ -64,7 +64,7 @@ export default {
 
         function updateOFF(){
             axios.put(
-                `http://127.00.0.1:8000/api/v1/umeng/led/1`, {'status': "OFF"}
+                `https://leddht-api-iot.herokuapp.com/api/v1/umeng/led/1`, {'status': "OFF"}
             ).then(() => {
                 console.log("berhasil")
             }).catch((err) => {
